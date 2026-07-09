@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.9.6 - 2026-07-09
+
+- 修复移动端 Safari 网页横屏时弹幕字体被异常拉伸或压缩的问题。
+- 弹幕画布改为优先读取未受 CSS transform 影响的布局尺寸，避免强制横屏旋转时使用横竖互换的 bounding box。
+- 横竖屏、窗口尺寸和 `visualViewport` 变化后会重新同步画布 backing store，并按新尺寸重排活跃弹幕。
+- 新增弹幕画布尺寸工具测试，覆盖 CSS transform 造成视觉尺寸与布局尺寸不一致的场景。
+
+## 4.9.5 - 2026-07-09
+
+- Vercel Analytics 现在只会在真实 Vercel 部署中注入，Docker、自托管和 Cloudflare Pages 不再请求 `/_vercel/insights/script.js`。
+- Cloudflare 部署环境判定优先于 Vercel 风格环境变量，避免适配器环境被误判为 Vercel。
+- 新增部署环境单元测试，覆盖自托管、Vercel、Cloudflare 和混合环境变量场景。
+
 ## 4.9.4 - 2026-07-08
 
 - 设置页的代理播放区域显示内置 `/api/proxy` 端点和部署限制，明确该功能不是第三方 HTTP/SOCKS 代理服务器配置。

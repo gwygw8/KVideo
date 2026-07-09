@@ -4,8 +4,18 @@
     "name": "KVideo",
     "branch": "main"
   },
-  "currentVersion": "4.9.5",
+  "currentVersion": "4.9.6",
   "releases": [
+    {
+      "version": "4.9.6",
+      "publishedAt": "2026-07-09",
+      "title": "修复移动端横屏弹幕缩放",
+      "notes": [
+        "弹幕画布现在优先使用未受 CSS transform 影响的布局尺寸，避免 iOS Safari 网页横屏时字体被拉伸或压缩。",
+        "横竖屏和 visualViewport 尺寸变化后会重新同步画布 backing store，并按新尺寸重排活跃弹幕。",
+        "新增弹幕画布尺寸工具测试，覆盖 transform 后 bounding box 横竖互换的回归场景。"
+      ]
+    },
     {
       "version": "4.9.5",
       "publishedAt": "2026-07-09",
